@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator Project</title>
+
+    <style>
+        html {
+            width: 100%;
+            height: 100%;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            margin: 0;
+        }
+
+        .parent {
+            display: grid;
+            grid-template-columns: 65px 65px 65px 65px;
+            grid-template-rows: 72px 65px 65px 65px 65px;
+            background-color: rgba(0, 0, 0, 0.793);
+            border-radius: 8px;
+            padding: 20px;
+            padding-right: 16px;
+        }
+
+        .visor {
+            display: grid;
+            grid-column-start: 1;
+            grid-column-end: 5;
+            grid-row-start: 1;
+            grid-row-end: 2;
+            grid-template-columns: 1fr 1fr;
+            width: auto;
+            height: auto;
+        }
+
+        .visor1 {
+            width: 250px;
+            height: 60px;
+            background-color: rgba(255, 255, 255, 0.877);
+            border: solid;
+            border-width: 1px;
+            border-color: rgba(0, 0, 0, 0.166);
+            border-radius: 5px;
+            font-size: 20px;
+            outline: none;
+            direction: rtl;
+            font-size: 25px;
+            display: flex;
+            align-items: center;
+            padding: 10px; /* Adjust this value as needed */
+            box-sizing: border-box;
+            letter-spacing: 1px;
+            padding-left: 15px;
+            color: rgb(50, 45, 45);
+        }
+
+        button {
+            color: white;
+            background-color: rgba(0, 0, 0, 0.444);
+            border: none;
+            width: 60px;
+            height: 60px;
+            border-radius: 6px;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+            font-size: 20px;
+        }
+
+        button:hover {
+            cursor: pointer;
+            background-color: rgba(0, 0, 0, 0.35);
+        }
+
+        button:active {
+            background-color: rgba(0, 0, 0, 0.25);
+        }
+
+        .zero {
+            display: grid;
+            grid-column-start: 1;
+            grid-column-end: 3;
+            width: 60px;
+        }
+
+        .zero-button {
+            width: 124px;
+        }
+
+        .equal {
+            grid-column-start: 4;
+            grid-row-start: 5;
+            grid-row-end: 6;
+        }
+
+        .equal-button {
+            height: 124px;
+        }
+
+        .border {
+            background-color: rgb(95, 95, 95);
+            transition: all 0.05s;
+        }
+
+        .border:hover {
+            background-color: rgba(95, 95, 95, 0.8);
+            transition: all 0.05s;
+        }
+
+        .border:active {
+            background-color: rgba(95, 95, 95, 0.6);
+            transition: all 0.05s;
+        }
+
+        .main {
+            background-color: rgb(24, 173, 196);
+            transition: all 0.05s;
+        }
+
+        .main:hover {
+            background-color: rgba(24, 173, 196, 0.8);
+            transition: all 0.05s;
+        }
+
+        .main:active {
+            background-color: rgba(24, 173, 196, 0.6);
+            transition: all 0.05s;
+        }
+
+        .keys {
+            background-color: grey;
+        }
+
+        .keys:hover {
+            background-color: rgba(128, 128, 128, 0.8);
+        }
+
+        .keys:active {
+            background-color: rgba(128, 128, 128, 0.6);
+            transition: all 0.05s;
+        }
+
+        @keyframes flash {
+        0% { opacity: 1; }
+        50% { opacity: 0; }
+        100% { opacity: 1; }
+        }
+
+        .flash {
+        animation: flash 0.08s ease-in-out;
+        }
+
+        .signal{
+            height: 25px;
+            width: 25px;
+            font-size: 10px;
+            margin-right: 200px;
+            color: black;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="calc">
+        <div class="parent">
+            <div class="visor">
+                <div class = "visor1" id="visor">
+                    <div id="signal" class="signal"></div>
+                </div>
+            </div>
+            <div><button id="ac" class="border">AC</button></div>
+            <div><button id="c" class="border"> C </button></div>
+            <div><button id="times" class="border">x</button></div>
+            <div><button id="divide" class="border">/</button></div>
+            <div><button id="7" class="keys">7</button></div>
+            <div><button id="8" class="keys">8</button></div>
+            <div><button id="9" class="keys">9</button></div>
+            <div><button id="subtract" class="border">-</button></div>
+            <div><button id="4" class="keys">4</button></div>
+            <div><button id="5" class="keys">5</button></div>
+            <div><button id="6" class="keys">6</button></div>
+            <div><button id="add" class="border">+</button></div>
+            <div><button id="1" class="keys">1</button></div>
+            <div><button id="2" class="keys">2</button></div>
+            <div><button id="3" class="keys">3</button></div>
+            <div class="equal"><button id="equal" class="equal-button main">=</button></div>
+            <div class="zero"><button id="0" class="zero-button keys">0</button></div>
+            <div><button id="decimal" class="keys">.</button></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
